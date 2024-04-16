@@ -21,3 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "team1"
 include(":app")
+include(":data:auth")
+include(":domain:auth")
+include(":feature:auth")
+include(":core:common")

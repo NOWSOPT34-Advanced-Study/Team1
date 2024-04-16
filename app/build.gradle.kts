@@ -50,6 +50,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":data:auth"))
+    implementation(project(":domain:auth"))
+    implementation(project(":feature:auth"))
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
