@@ -1,18 +1,14 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 }
 
 android {
-    namespace = "com.simhwa.team1"
+    namespace = "com.simhwa.auth"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.simhwa.team1"
         minSdk = 28
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,7 +37,6 @@ android {
 dependencies {
     implementation(project(":data:auth"))
     implementation(project(":domain:auth"))
-    implementation(project(":feature:auth"))
     implementation(project(":core:ui"))
 
     implementation(libs.androidx.core.ktx)
