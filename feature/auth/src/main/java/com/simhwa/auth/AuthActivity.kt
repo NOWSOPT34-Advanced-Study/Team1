@@ -1,10 +1,10 @@
-package com.simhwa.team1
+package com.simhwa.auth
 
 import android.os.Bundle
-import com.simhwa.team1.databinding.ActivityMainBinding
+import com.simhwa.auth.databinding.ActivityAuthBinding
 import com.simhwa.ui.base.BaseActivity
 
-class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inflate(it) }) {
+class AuthActivity : BaseActivity<ActivityAuthBinding>({ ActivityAuthBinding.inflate(it) }) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
