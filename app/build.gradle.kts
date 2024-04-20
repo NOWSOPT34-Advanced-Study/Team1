@@ -43,6 +43,9 @@ dependencies {
     implementation(project(":domain:auth"))
     implementation(project(":feature:auth"))
     implementation(project(":core:ui"))
+    implementation(project(":data:myPage"))
+    implementation(project(":domain:myPage"))
+    implementation(project(":feature:myPage"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
