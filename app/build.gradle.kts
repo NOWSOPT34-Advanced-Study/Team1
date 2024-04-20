@@ -43,6 +43,8 @@ dependencies {
     implementation(project(":domain:auth"))
     implementation(project(":feature:auth"))
     implementation(project(":core:ui"))
+    implementation(project(":data:mainPage"))
+    implementation(project(":domain:mainPage"))
     implementation(project(":feature:mainPage"))
 
 
