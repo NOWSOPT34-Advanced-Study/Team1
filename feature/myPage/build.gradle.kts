@@ -33,6 +33,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":data:myPage"))
+    implementation(project(":domain:myPage"))
+    implementation(project(":core:ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
