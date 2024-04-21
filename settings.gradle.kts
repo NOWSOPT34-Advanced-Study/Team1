@@ -26,6 +26,12 @@ include(":domain:auth")
 include(":core:common")
 include(":feature:auth")
 include(":core:ui")
+
+include(":data:mainPage")
+include(":domain:mainPage")
+include(":feature:mainPage")
+
 include(":data:myPage")
 include(":feature:myPage")
 include(":domain:myPage")
+

@@ -25,6 +25,9 @@
             android:name="com.simhwa.auth.AuthActivity"
             android:exported="false" />
         <activity
+            android:name="com.simhwa.mainPage.MainPageActivity"
+            android:exported="false" />
+         <activity
             android:name="com.simhwa.mypage.MyPageActivity"
             android:exported="false" />
     </application>

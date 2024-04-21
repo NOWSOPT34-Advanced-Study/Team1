@@ -1,20 +1,17 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 }
 
 android {
-    namespace = "com.simhwa.team1"
+    namespace = "com.example.mainpage"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.simhwa.team1"
-        minSdk = 28
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -30,27 +27,18 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    buildFeatures {
-        viewBinding = true
-    }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
-    implementation(project(":data:auth"))
-    implementation(project(":domain:auth"))
-    implementation(project(":feature:auth"))
-    implementation(project(":core:ui"))
-
     implementation(project(":data:mainPage"))
     implementation(project(":domain:mainPage"))
-    implementation(project(":feature:mainPage"))
-
-    implementation(project(":data:myPage"))
-    implementation(project(":domain:myPage"))
-    implementation(project(":feature:myPage"))
+    implementation(project(":core:ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
