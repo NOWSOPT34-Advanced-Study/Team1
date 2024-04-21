@@ -1,14 +1,13 @@
 package com.simhwa.mainPage
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import com.example.mainpage.R
+import com.example.mainpage.databinding.ActivityMainPageBinding
+import com.simhwa.ui.base.BaseActivity
 
-class MainPageActivity : AppCompatActivity() {
+class MainPageActivity :
+    BaseActivity<ActivityMainPageBinding>({ ActivityMainPageBinding.inflate(it) }) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main_page)
+        setContentView(binding.root)
     }
 }
