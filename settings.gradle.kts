@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Team1"
+rootProject.name = "team1"
 include(":app")
 include(":data:auth")
 include(":domain:auth")
