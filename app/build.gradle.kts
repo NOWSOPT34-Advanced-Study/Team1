@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -39,18 +41,12 @@ android {
 }
 
 dependencies {
-    implementation(project(":data:auth"))
-    implementation(project(":domain:auth"))
-    implementation(project(":feature:auth"))
     implementation(project(":core:ui"))
+    implementation(project(":data:local"))
 
-    implementation(project(":data:mainPage"))
-    implementation(project(":domain:mainPage"))
-    implementation(project(":feature:mainPage"))
-
-    implementation(project(":data:myPage"))
-    implementation(project(":domain:myPage"))
+    implementation(project(":feature:auth"))
     implementation(project(":feature:myPage"))
+    implementation(project(":feature:mainPage"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -60,4 +56,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.activity.ktx)
+
+    // hilt
+    kapt(libs.hilt.android.compiler)
+    implementation(libs.hilt.android)
 }
