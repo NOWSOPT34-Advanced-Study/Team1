@@ -1,14 +1,11 @@
-package com.simhwa.data.local
+package com.simhwa.data.local.datastore
 
-import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
 import com.simhwa.data.local.model.UserInfo
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -17,13 +14,9 @@ import kotlinx.coroutines.flow.map
 import java.io.IOException
 import javax.inject.Inject
 
-private const val DATASTORE_NAME = "local_datastore"
-
-private val Context.localDataStore: DataStore<Preferences> by preferencesDataStore(DATASTORE_NAME)
-
 @ActivityRetainedScoped
-class LocalDataStore @Inject constructor(
-    @ApplicationContext private val context: Context,
+class LocalUserDataStore @Inject constructor(
+    private val localDataStore: DataStore<Preferences>,
 ) {
     private object Keys {
         val id = stringPreferencesKey(ID_KEY)
@@ -31,7 +24,7 @@ class LocalDataStore @Inject constructor(
         val nickname = stringPreferencesKey(NICKNAME_KEY)
     }
 
-    val userInfo: Flow<UserInfo> = context.localDataStore.data
+    val userInfo: Flow<UserInfo> = localDataStore.data
         .catch {
             if (it is IOException) {
                 emit(emptyPreferences())
@@ -49,7 +42,7 @@ class LocalDataStore @Inject constructor(
         .distinctUntilChanged()
 
     suspend fun setUserInfo(userInfo: UserInfo) {
-        context.localDataStore.edit { preferences ->
+        localDataStore.edit { preferences ->
             preferences[Keys.id] = userInfo.id
             preferences[Keys.password] = userInfo.password
             preferences[Keys.nickname] = userInfo.nickname
