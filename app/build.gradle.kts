@@ -39,24 +39,26 @@ android {
 }
 
 dependencies {
-    implementation(project(":data:auth"))
-    implementation(project(":domain:auth"))
-    implementation(project(":feature:auth"))
+    implementation(project(":data:signIn"))
+    implementation(project(":domain:signIn"))
+    implementation(project(":feature:signIn"))
     implementation(project(":core:ui"))
 
     implementation(project(":data:mainPage"))
     implementation(project(":domain:mainPage"))
     implementation(project(":feature:mainPage"))
 
-    implementation(project(":data:myPage"))
-    implementation(project(":domain:myPage"))
-    implementation(project(":feature:myPage"))
+    implementation(project(":data:signUp"))
+    implementation(project(":domain:signUp"))
+    implementation(project(":feature:signUp"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

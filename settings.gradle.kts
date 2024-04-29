@@ -21,17 +21,17 @@ dependencyResolutionManagement {
 
 rootProject.name = "Team1"
 include(":app")
-include(":data:auth")
-include(":domain:auth")
+include(":data:signIn")
+include(":domain:signIn")
 include(":core:common")
-include(":feature:auth")
+include(":feature:signIn")
 include(":core:ui")
 
 include(":data:mainPage")
 include(":domain:mainPage")
 include(":feature:mainPage")
 
-include(":data:myPage")
-include(":feature:myPage")
-include(":domain:myPage")
+include(":data:signUp")
+include(":feature:signUp")
+include(":domain:signUp")
 
