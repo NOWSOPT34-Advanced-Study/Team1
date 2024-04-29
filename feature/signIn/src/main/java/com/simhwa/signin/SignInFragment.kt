@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import com.simhwa.signin.databinding.FragmentSignInBinding
 
@@ -27,9 +29,23 @@ class SignInFragment : Fragment() {
         initSignUpBtnClickListener()
         initSignInBtnClickListener()
     }
-    fun initSignUpBtnClickListener(){
-        findNavController()
+
+    fun initSignUpBtnClickListener() {
+        binding.btSignup.setOnClickListener {
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("featureSignUp://SignUpFragment".toUri())
+                .build()
+            findNavController().navigate(request)
+        }
     }
-    fun initSignInBtnClickListener(){}
+
+    fun initSignInBtnClickListener() {
+        binding.btSignin.setOnClickListener {
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("featureMainPage://MainPageFragment".toUri())
+                .build()
+            findNavController().navigate(request)
+        }
+    }
 
 }
