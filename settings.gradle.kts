@@ -37,7 +37,3 @@ include(":feature:mainPage")
 include(":data:signUp")
 include(":domain:signUp")
 include(":feature:signUp")
-
-include(":data:myPage")
-include(":domain:myPage")
-include(":feature:myPage")
