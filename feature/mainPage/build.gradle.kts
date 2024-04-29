@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mainPage"
+    namespace = "com.simhwa.mainPage"
     compileSdk = 34
 
     defaultConfig {
