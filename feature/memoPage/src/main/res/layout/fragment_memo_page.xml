@@ -9,5 +9,4 @@
         android:layout_height="match_parent"
         android:text="메모페이지입니다"
         android:textSize="30sp"/>
-
 </FrameLayout>

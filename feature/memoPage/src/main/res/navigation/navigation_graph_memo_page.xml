@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_graph_main_page"
+    android:id="@+id/navigation_graph_memo_page"
     app:startDestination="@id/navigation_memo_page">
 
     <fragment
@@ -9,6 +9,6 @@
         android:name="com.simhwa.mainPage.MemoPageFragment"
         android:label="fragment_memo_page" />
 
-    <deepLink app:uri="featureMainPage://MainPageFragment" />
+    <deepLink app:uri="featureMemoPage://MemoPageFragment" />
 
 </navigation>

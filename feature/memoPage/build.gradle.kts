@@ -1,22 +1,17 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
 }
 
 android {
-    namespace = "com.simhwa.team1"
+    namespace = "com.simhwa.mainPage"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.simhwa.team1"
-        minSdk = 28
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
+        minSdk = 28
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -32,29 +27,18 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    buildFeatures {
-        viewBinding = true
-    }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
 dependencies {
-    implementation(project(":core:ui"))
-    implementation(project(":data:local"))
     implementation(project(":data:memoPage"))
-
     implementation(project(":domain:memoPage"))
-    implementation(project(":feature:memoPage"))
-
-    implementation(project(":data:signIn"))
-    implementation(project(":domain:signIn"))
-    implementation(project(":feature:signIn"))
-
-    implementation(project(":data:signUp"))
-    implementation(project(":domain:signUp"))
-    implementation(project(":feature:signUp"))
+    implementation(project(":core:ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -66,11 +50,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.activity.ktx)
-
-    // hilt
-    kapt(libs.hilt.android.compiler)
-    implementation(libs.hilt.android)
 }

@@ -42,10 +42,9 @@ class SignInFragment : Fragment() {
     fun initSignInBtnClickListener() {
         binding.btSignin.setOnClickListener {
             val request = NavDeepLinkRequest.Builder
-                .fromUri("featureMainPage://MainPageFragment".toUri())
+                .fromUri("featureMemoPage://MemoPageFragment".toUri())
                 .build()
             findNavController().navigate(request)
         }
     }
-
 }
