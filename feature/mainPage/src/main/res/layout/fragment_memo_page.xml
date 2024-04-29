@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.simhwa.mainPage.MainPageFragment">
+    tools:context="com.simhwa.mainPage.MemoPageFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="메인페이지입니다"
+        android:text="메모페이지입니다"
         android:textSize="30sp"/>
 
 </FrameLayout>

@@ -2,13 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_graph_main_page"
-    app:startDestination="@id/navigation_main_page">
+    app:startDestination="@id/navigation_memo_page">
 
     <fragment
-        android:id="@+id/navigation_main_page"
-        android:name="com.simhwa.mainPage.MainPageFragment"
-        android:label="fragment_main_page" />
+        android:id="@+id/navigation_memo_page"
+        android:name="com.simhwa.mainPage.MemoPageFragment"
+        android:label="fragment_memo_page" />
 
-    <deepLink app:uri="featureMainPage://MainPageFragment"/>
+    <deepLink app:uri="featureMainPage://MainPageFragment" />
 
 </navigation>
