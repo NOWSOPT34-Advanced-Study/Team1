@@ -8,4 +8,7 @@
         android:id="@+id/navigation_main_page"
         android:name="com.simhwa.mainPage.MainPageFragment"
         android:label="fragment_main_page" />
+
+    <deepLink app:uri="featureMainPage://MainPageFragment"/>
+
 </navigation>

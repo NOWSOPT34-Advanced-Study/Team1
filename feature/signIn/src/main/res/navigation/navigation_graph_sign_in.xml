@@ -8,4 +8,7 @@
         android:id="@+id/navigation_sign_in"
         android:name="com.simhwa.signin.SignInFragment"
         android:label="fragment_sign_in"/>
+
+    <deepLink app:uri="featureSignIn://SignInFragment"/>
+
 </navigation>
