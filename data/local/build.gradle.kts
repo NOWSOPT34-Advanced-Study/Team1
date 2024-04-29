@@ -1,22 +1,19 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
 
 android {
-    namespace = "com.simhwa.team1"
+    namespace = "com.simhwa.data.local"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.simhwa.team1"
         minSdk = 28
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -32,43 +29,22 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    buildFeatures {
-        viewBinding = true
-    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
 
 dependencies {
-    implementation(project(":core:ui"))
-    implementation(project(":data:local"))
-    
-    implementation(project(":data:mainPage"))
-    implementation(project(":domain:mainPage"))
-    implementation(project(":feature:mainPage"))
-    
-    implementation(project(":data:signIn"))
-    implementation(project(":domain:signIn"))
-    implementation(project(":feature:signIn"))
-
-    implementation(project(":data:signUp"))
-    implementation(project(":domain:signUp"))
-    implementation(project(":feature:signUp"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
     // hilt
     kapt(libs.hilt.android.compiler)
