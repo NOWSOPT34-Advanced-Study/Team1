@@ -1,4 +1,4 @@
-package com.simhwa.myPage
+package com.simhwa.signup
 
 import android.os.Bundle
 import android.view.LayoutInflater

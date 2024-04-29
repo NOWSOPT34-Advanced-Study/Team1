@@ -1,4 +1,4 @@
-package com.simhwa.auth
+package com.simhwa.signin
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

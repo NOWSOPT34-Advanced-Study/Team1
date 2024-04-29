@@ -1,4 +1,4 @@
-package com.simhwa.auth
+package com.simhwa.signin
 
 import org.junit.Test
 
