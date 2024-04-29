@@ -3,7 +3,6 @@ package com.simhwa.team1
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.simhwa.team1.databinding.ActivityMainBinding
 import com.simhwa.ui.base.BaseActivity
 

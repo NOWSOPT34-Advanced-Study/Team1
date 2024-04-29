@@ -3,17 +3,17 @@
     <item
         android:id="@+id/navigation_memo"
         android:icon="@drawable/baseline_notes_24"
-        android:title="메모"/>
+        android:title="메모" />
     <item
         android:id="@+id/navigation_search"
         android:icon="@drawable/baseline_search_24"
-        android:title="검색"/>
+        android:title="검색" />
     <item
         android:id="@+id/navigation_scrap"
         android:icon="@drawable/baseline_file_copy_24"
-        android:title="스크랩"/>
+        android:title="스크랩" />
     <item
         android:id="@+id/navigation_mypage"
         android:icon="@drawable/baseline_person_24"
-        android:title="마이페이지"/>
+        android:title="마이페이지" />
 </menu>
