@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.simhwa.signUp"
+    namespace = "com.simhwa.signup"
     compileSdk = 34
 
     defaultConfig {

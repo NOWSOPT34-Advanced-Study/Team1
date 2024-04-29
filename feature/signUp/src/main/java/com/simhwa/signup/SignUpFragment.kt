@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.simhwa.signUp.databinding.FragmentSignUpBinding
+import com.simhwa.signup.databinding.FragmentSignUpBinding
 
 class SignUpFragment : Fragment() {
     private var _binding: FragmentSignUpBinding? = null

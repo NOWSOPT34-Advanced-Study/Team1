@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.mainpage.databinding.FragmentMainPageBinding
+import com.example.mainPage.databinding.FragmentMainPageBinding
 
 class MainPageFragment : Fragment() {
     private var _binding: FragmentMainPageBinding? = null

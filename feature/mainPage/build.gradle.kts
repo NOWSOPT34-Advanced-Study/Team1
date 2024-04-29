@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mainpage"
+    namespace = "com.example.mainPage"
     compileSdk = 34
 
     defaultConfig {
