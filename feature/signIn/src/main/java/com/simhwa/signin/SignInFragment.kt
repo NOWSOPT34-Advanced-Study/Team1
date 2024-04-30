@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.simhwa.signin.databinding.FragmentSignInBinding
 
@@ -18,7 +19,7 @@ class SignInFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
@@ -44,7 +45,11 @@ class SignInFragment : Fragment() {
             val request = NavDeepLinkRequest.Builder
                 .fromUri("featureMemoPage://MemoPageFragment".toUri())
                 .build()
-            findNavController().navigate(request)
+            findNavController().navigate(
+                request, NavOptions.Builder()
+                    .setPopUpTo(findNavController().graph.id, true)
+                    .build()
+            )
         }
     }
 }
