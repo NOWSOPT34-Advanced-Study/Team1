@@ -7,5 +7,7 @@
     <include app:graph="@navigation/navigation_graph_sign_in" />
     <include app:graph="@navigation/navigation_graph_sign_up" />
     <include app:graph="@navigation/navigation_graph_memo_page" />
+    <include app:graph= "@navigation/navigation_graph_my_page" />
+    <include app:graph= "@navigation/navigation_graph_memo_page" />
 
 </navigation>
