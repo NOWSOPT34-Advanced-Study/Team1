@@ -42,21 +42,10 @@ android {
 
 dependencies {
     implementation(project(":core:ui"))
-    implementation(project(":data:local"))
-    implementation(project(":data:memoPage"))
 
-    implementation(project(":data:signIn"))
-    implementation(project(":domain:signIn"))
     implementation(project(":feature:signIn"))
-
-    implementation(project(":data:signUp"))
-    implementation(project(":domain:signUp"))
     implementation(project(":feature:signUp"))
-
-    implementation(project(":data:memoPage"))
-    implementation(project(":domain:memoPage"))
     implementation(project(":feature:memoPage"))
-
     implementation(project(":feature:clippingPage"))
     implementation(project(":feature:searchPage"))
     implementation(project(":feature:myPage"))

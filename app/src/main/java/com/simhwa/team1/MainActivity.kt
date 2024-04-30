@@ -1,11 +1,9 @@
 package com.simhwa.team1
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.simhwa.team1.databinding.ActivityMainBinding
 import com.simhwa.ui.base.BaseActivity
@@ -29,21 +27,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     private fun setNavigation() {
         setNavHost()
-        setBottomClickListener()
+        setupBottomNavigation()
         setBottomNavVisibity()
     }
 
     private fun setNavHost() {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fcv_main) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fcv_main) as NavHostFragment
         navController = navHostFragment.navController
         navController.graph.setStartDestination(com.simhwa.signin.R.id.navigation_graph_sign_in)
     }
 
-    private fun setBottomClickListener() {
-        binding.bnvMain.setOnItemSelectedListener { item ->
-            NavigationUI.onNavDestinationSelected(item, navController)
-            return@setOnItemSelectedListener true
-        }
+    private fun setupBottomNavigation() {
+        binding.bnvMain.setupWithNavController(navController)
     }
 
     private fun setBottomNavVisibity() {
