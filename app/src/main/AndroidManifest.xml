@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.simhwa.auth.AuthActivity"
+            android:name="com.simhwa.signin.AuthActivity"
             android:exported="false" />
         <activity
             android:name="com.simhwa.mainPage.MainPageActivity"

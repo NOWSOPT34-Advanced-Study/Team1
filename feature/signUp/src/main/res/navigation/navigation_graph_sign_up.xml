@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph_sign_up"
+    app:startDestination="@id/navigation_sign_up">
+    <fragment
+        android:id="@+id/navigation_sign_up"
+        android:name="com.simhwa.signup.SignUpFragment"
+        android:label="fragment_sign_up" />
+
+    <deepLink app:uri="featureSignUp://SignUpFragment"/>
+
+</navigation>

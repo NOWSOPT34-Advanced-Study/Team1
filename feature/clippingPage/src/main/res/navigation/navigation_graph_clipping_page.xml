@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph_clipping_page"
+    app:startDestination="@id/navigation_clipping_page">
+
+    <fragment
+        android:id="@+id/navigation_clipping_page"
+        android:name="com.simhwa.clippingpage.ClippingPageFragment"
+        android:label="fragment_memo_page" />
+
+    <deepLink app:uri="featureClippingPage://ClippingPageFragment" />
+
+</navigation>

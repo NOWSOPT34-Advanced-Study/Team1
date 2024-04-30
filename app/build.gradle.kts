@@ -42,17 +42,21 @@ android {
 
 dependencies {
     implementation(project(":core:ui"))
-    implementation(project(":data:local"))
 
-    implementation(project(":feature:auth"))
+    implementation(project(":feature:signIn"))
+    implementation(project(":feature:signUp"))
+    implementation(project(":feature:memoPage"))
+    implementation(project(":feature:clippingPage"))
+    implementation(project(":feature:searchPage"))
     implementation(project(":feature:myPage"))
-    implementation(project(":feature:mainPage"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
