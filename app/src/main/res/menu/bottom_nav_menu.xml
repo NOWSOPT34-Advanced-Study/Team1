@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigation_memo_page"
+        android:id="@+id/navigation_graph_memo_page"
         android:icon="@drawable/baseline_notes_24"
         android:title="메모" />
     <item
-        android:id="@+id/navigation_search_page"
+        android:id="@+id/navigation_graph_search_page"
         android:icon="@drawable/baseline_search_24"
         android:title="검색" />
     <item
-        android:id="@+id/navigation_clipping_page"
+        android:id="@+id/navigation_graph_clipping_page"
         android:icon="@drawable/baseline_file_copy_24"
         android:title="스크랩" />
     <item

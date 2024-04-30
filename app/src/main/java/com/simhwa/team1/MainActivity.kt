@@ -50,6 +50,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 com.simhwa.mainPage.R.id.navigation_memo_page -> showBottomNav()
+                com.simhwa.clippingpage.R.id.navigation_clipping_page -> showBottomNav()
+                com.simhwa.searchpage.R.id.navigation_search_page -> showBottomNav()
                 com.simhwa.mypage.R.id.navigation_my_page -> showBottomNav()
                 else -> hideBottomNav()
             }
