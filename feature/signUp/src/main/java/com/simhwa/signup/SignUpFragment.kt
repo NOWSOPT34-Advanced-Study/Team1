@@ -5,31 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import com.simhwa.signup.databinding.FragmentSignUpBinding
+import com.simhwa.ui.base.BaseFragment
 
-class SignUpFragment : Fragment() {
-    private var _binding: FragmentSignUpBinding? = null
-    private val binding: FragmentSignUpBinding
-        get() = requireNotNull(_binding)
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentSignUpBinding = FragmentSignUpBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initSignUpBtnClickListener()
     }
 
-    fun initSignUpBtnClickListener() {
-        binding.btSignup.setOnClickListener {
+    private fun initSignUpBtnClickListener() {
+        binding.btnSignUpSignup.setOnClickListener {
             val request = NavDeepLinkRequest.Builder
                 .fromUri("featureSignIn://SignInFragment".toUri())
                 .build()
@@ -37,3 +30,8 @@ class SignUpFragment : Fragment() {
         }
     }
 }
+
+
+
+
+

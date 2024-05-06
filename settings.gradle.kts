@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "team1"
+rootProject.name = "Team1"
 include(":app")
 include(":core:common")
 
