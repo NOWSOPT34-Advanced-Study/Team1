@@ -5,13 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import com.simhwa.data.local.model.UserInfo
 import com.simhwa.signup.databinding.FragmentSignUpBinding
 import com.simhwa.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
+
+    private val signUpViewModel by viewModels<SignUpViewModel>()
+
     override fun getFragmentBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -25,6 +32,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
 
     private fun initSignUpBtnClickListener() {
         binding.btnSignUpSignup.setOnClickListener {
+            setUserInfo()
+
             val request = NavDeepLinkRequest.Builder
                 .fromUri("featureSignIn://SignInFragment".toUri())
                 .build()
@@ -35,5 +44,15 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
 
             findNavController().navigate(request, navOptions)
         }
+    }
+
+    private fun setUserInfo() {
+        signUpViewModel.signUpUser(with(binding) {
+            UserInfo(
+                etSignUpId.text.toString(),
+                etSignUpPw.text.toString(),
+                etSignUpNickname.text.toString()
+            )
+        })
     }
 }

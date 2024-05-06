@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -37,6 +39,7 @@ android {
 
 dependencies {
     implementation(project(":data:signUp"))
+    implementation(project(":data:local"))
     implementation(project(":domain:signUp"))
     implementation(project(":core:ui"))
 
@@ -48,4 +51,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // hilt
+    kapt(libs.hilt.android.compiler)
+    implementation(libs.hilt.android)
 }
