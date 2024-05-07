@@ -33,7 +33,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
     private fun initSignUpBtnClickListener() {
         binding.btnSignUpSignup.setOnClickListener {
             setUserInfo()
-            navigateToLogin()
+            navigateToSignIn()
         }
     }
 
@@ -47,7 +47,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
         })
     }
 
-    private fun navigateToLogin() {
+    private fun navigateToSignIn() {
         val request = NavDeepLinkRequest.Builder
             .fromUri("featureSignIn://SignInFragment".toUri())
             .build()
