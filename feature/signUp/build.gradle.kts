@@ -39,7 +39,6 @@ android {
 
 dependencies {
     implementation(project(":data:signUp"))
-    implementation(project(":data:local"))
     implementation(project(":domain:signUp"))
     implementation(project(":core:ui"))
 
