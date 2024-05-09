@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">auth</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--sign_in-->
+    <string name="sign_in_title">SIGN IN</string>
+    <string name="sign_in_id">ID</string>
+    <string name="sign_in_id_hint">아이디를 입력해주세요</string>
+    <string name="sign_in_pw">비밀번호</string>
+    <string name="sign_in_pw_hint">비밀번호를 입력해주세요</string>
+    <string name="sign_in_error">아이디 혹은 비밀번호를 확인해주세요</string>
 </resources>

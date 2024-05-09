@@ -10,8 +10,10 @@ import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import java.io.IOException
+import java.security.Key
 import javax.inject.Inject
 
 @ActivityRetainedScoped
@@ -47,6 +49,14 @@ class LocalUserDataStore @Inject constructor(
             preferences[Keys.password] = userInfo.password
             preferences[Keys.nickname] = userInfo.nickname
         }
+    }
+
+    suspend fun canSignIn(user: UserInfo): Boolean {
+        val storedUserInfo = userInfo.first {
+            it.id.isNotEmpty() && it.password.isNotEmpty()
+        }
+
+        return storedUserInfo.id == user.id && storedUserInfo.password == user.password
     }
 
     companion object {
