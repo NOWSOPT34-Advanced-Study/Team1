@@ -1,5 +1,6 @@
 package com.simhwa.signin
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,9 +35,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
         signInViewModel.sideEffect.flowWithLifecycle(lifecycle).onEach { sideEffect ->
             when (sideEffect) {
                 SignInSideEffect.NavigateToMain -> {
-                    val request = NavDeepLinkRequest.Builder
-                        .fromUri("featureMemoPage://MemoPageFragment".toUri())
-                        .build()
+                    val request = getRequest("featureMemoPage://MemoPageFragment".toUri())
+
                     findNavController().navigate(
                         request, NavOptions.Builder()
                             .setPopUpTo(findNavController().graph.id, true)
@@ -45,9 +45,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
                 }
 
                 SignInSideEffect.NavigateToSignUp -> {
-                    val request = NavDeepLinkRequest.Builder
-                        .fromUri("featureSignUp://SignUpFragment".toUri())
-                        .build()
+                    val request = getRequest("featureSignUp://SignUpFragment".toUri())
+
                     findNavController().navigate(request)
                 }
 
@@ -62,6 +61,10 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
         initSignUpBtnClickListener()
         initSignInBtnClickListener()
     }
+
+    private fun getRequest(uri: Uri) = NavDeepLinkRequest.Builder
+        .fromUri(uri)
+        .build()
 
 
     private fun initSignUpBtnClickListener() {
