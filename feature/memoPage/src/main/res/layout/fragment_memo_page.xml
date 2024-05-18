@@ -1,12 +1,85 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.simhwa.mainPage.MemoPageFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="메모페이지입니다"
-        android:textSize="30sp"/>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_memo_myinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="My Info"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_memo_title_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:text="ID"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_memo_myinfo" />
+
+        <TextView
+            android:id="@+id/memo_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="메모페이지입니다"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_memo_myinfo"
+            app:layout_constraintStart_toStartOf="@id/tv_memo_myinfo"
+            app:layout_constraintTop_toTopOf="@id/tv_memo_title_id" />
+
+        <TextView
+            android:id="@+id/tv_memo_title_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:text="PW"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_memo_title_id" />
+
+        <TextView
+            android:id="@+id/memo_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메모페이지입니다"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@id/memo_id"
+            app:layout_constraintTop_toTopOf="@id/tv_memo_title_pw" />
+
+        <TextView
+            android:id="@+id/tv_memo_title_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:text="별명"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_memo_title_pw" />
+
+        <TextView
+            android:id="@+id/memo_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메모페이지입니다"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@id/memo_password"
+            app:layout_constraintTop_toTopOf="@id/tv_memo_title_nickname" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

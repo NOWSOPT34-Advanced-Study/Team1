@@ -6,13 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MyPageFragment">
 
-    <TextView
+    <EditText
+        android:id="@+id/et_update_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is My"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="100dp"
+        android:hint="new id"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_update_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="new password"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/et_update_id"
+        app:layout_constraintStart_toStartOf="@id/et_update_id"
+        app:layout_constraintTop_toBottomOf="@id/et_update_id" />
+
+    <EditText
+        android:id="@+id/et_update_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="new nickname"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/et_update_password"
+        app:layout_constraintStart_toStartOf="@id/et_update_password"
+        app:layout_constraintTop_toBottomOf="@id/et_update_password" />
+
+    <Button
+        android:id="@+id/bt_update_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="UPDATE NICKNAME"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/et_update_nickname"
+        app:layout_constraintStart_toStartOf="@id/et_update_nickname"
+        app:layout_constraintTop_toBottomOf="@id/et_update_nickname" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
