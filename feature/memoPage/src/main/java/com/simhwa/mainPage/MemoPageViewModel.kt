@@ -18,7 +18,12 @@ class MemoPageViewModel @Inject constructor(private val repository: MainPageRepo
 
     fun getUserInfo() {
         viewModelScope.launch {
-            _userInfo.value = repository.mainPageUSer()
+            repository.mainPageUSer()
+                .onSuccess {
+                    _userInfo.value = it
+                }.onFailure {
+
+                }
         }
     }
 }

@@ -7,8 +7,11 @@ import javax.inject.Inject
 class MainPageRepositoryImpl @Inject constructor(private val mainPageDataSource: MainPageDataSource) :
     MainPageRepository {
 
-    override suspend fun mainPageUSer(): User =
-        mainPageDataSource.mainPageUSer()
+    override suspend fun mainPageUSer(): Result<User> =
+        runCatching {
+            mainPageDataSource.mainPageUSer()
+        }
+
 
     override suspend fun updateUserInfo(user: User) {
         runCatching {
